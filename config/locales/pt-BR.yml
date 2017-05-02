@@ -1,0 +1,37 @@
+pt-BR:
+  activerecord:
+    attributes:
+      animal:
+        type: "Tipo"
+        type_list:
+          dog: "Cachorro"
+          cat: "Gato"
+          wildAnimal: "Animal selvagem"
+          domesticAnimal: "Animal doméstico"
+        size: "Porte"
+        size_list:
+          small: "Pequeno"
+          medium: "Médio"
+          large: "Grande"
+        fur: "Pelagem"
+        fur_list:
+          straightShort: "Liso e curto"
+          straightLong: "Liso e longo"
+          curlyShort: "Crespo e curto"
+          curlyLong: "Crespo e longo"
+        color: "Cor"
+        color_list:
+          white: "Branco"
+          black: "Preto"
+          chocolate: "Chocolate"
+          brown: "Marrom"
+          brasino: "Brasino"
+          blackAndWhite: "Preto e branco"
+          blackCaramel: "Preto caramelo"
+          beige: "Bege"
+        gender: "Gênero"
+        gender_list:
+          male: "Macho"
+          female: "Fêmea"
+        birthdate: "Nascimento"
+        description: "Descrição"

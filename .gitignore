@@ -15,5 +15,5 @@
 
 /node_modules
 /yarn-error.log
-.idea/workspace.xml
+.idea/
 .byebug_history

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 1
+  size: 1
+  fur: 1
+  color: 1
+  gender: 1
+  birthdate: 2017-04-30 16:39:55
+  description: MyText
+
+two:
+  type: 1
+  size: 1
+  fur: 1
+  color: 1
+  gender: 1
+  birthdate: 2017-04-30 16:39:55
+  description: MyText
