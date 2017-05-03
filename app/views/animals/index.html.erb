@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Animals</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Type</th>
-      <th>Size</th>
-      <th>Fur</th>
-      <th>Color</th>
-      <th>Gender</th>
-      <th>Birthdate</th>
-      <th>Description</th>
+      <th><%= I18n.t 'activerecord.attributes.animal.code' %></th>
+      <th><%= I18n.t 'activerecord.attributes.animal.pet_type' %></th>
+      <th><%= I18n.t 'activerecord.attributes.animal.size' %></th>
+      <th><%= I18n.t 'activerecord.attributes.animal.fur' %></th>
+      <th><%= I18n.t 'activerecord.attributes.animal.color' %></th>
+      <th><%= I18n.t 'activerecord.attributes.animal.gender' %></th>
+      <th><%= I18n.t 'activerecord.attributes.animal.birthdate' %></th>
+      <th><%= I18n.t 'activerecord.attributes.animal.description' %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,11 +19,12 @@
   <tbody>
     <% @animals.each do |animal| %>
       <tr>
-        <td><%= animal.type %></td>
-        <td><%= animal.size %></td>
-        <td><%= animal.fur %></td>
-        <td><%= animal.color %></td>
-        <td><%= animal.gender %></td>
+        <td><%= animal.code %></td>
+        <td><%= I18n.t(animal.pet_type, scope: 'activerecord.attributes.animal.pet_type_list') %></td>
+        <td><%= I18n.t(animal.size, scope: 'activerecord.attributes.animal.size_list') %></td>
+        <td><%= I18n.t(animal.fur, scope: 'activerecord.attributes.animal.fur_list') %></td>
+        <td><%= I18n.t(animal.color, scope: 'activerecord.attributes.animal.color_list') %></td>
+        <td><%= I18n.t(animal.gender, scope: 'activerecord.attributes.animal.gender_list') %></td>
         <td><%= animal.birthdate %></td>
         <td><%= animal.description %></td>
         <td><%= link_to 'Show', animal %></td>

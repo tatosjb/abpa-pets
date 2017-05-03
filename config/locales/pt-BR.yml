@@ -2,8 +2,9 @@ pt-BR:
   activerecord:
     attributes:
       animal:
-        type: "Tipo"
-        type_list:
+        code: "Código"
+        pet_type: "Tipo"
+        pet_type_list:
           dog: "Cachorro"
           cat: "Gato"
           wildAnimal: "Animal selvagem"

@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :type %>
-    <%= form.select :type, options_for_select(form.object.class.translated_types.map { |translation, k, _v| [translation, k] })  %>
+    <%= form.label :code %>
+    <%= form.text_field :code, id: :code  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pet_type %>
+    <%= form.select :pet_type, options_for_select(form.object.class.translated_pet_types.map { |translation, k, _v| [translation, k] })  %>
   </div>
 
   <div class="field">

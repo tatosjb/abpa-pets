@@ -13,13 +13,14 @@
 ActiveRecord::Schema.define(version: 20170430193955) do
 
   create_table "animals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "type"
+    t.integer "pet_type"
     t.integer "size"
     t.integer "fur"
     t.integer "color"
     t.integer "gender"
     t.date "birthdate"
     t.text "description"
+    t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

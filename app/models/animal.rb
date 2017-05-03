@@ -1,8 +1,8 @@
 class Animal < ApplicationRecord
   include TranslateEnum
 
-  enum type: {dog: 0, cat: 1, wildAnimal: 2, domesticAnimal: 3}
-  translate_enum :type
+  enum pet_type: {dog: 0, cat: 1, wildAnimal: 2, domesticAnimal: 3}
+  translate_enum :pet_type
 
   enum size: {small: 0, medium: 1, large: 2}
   translate_enum :size
