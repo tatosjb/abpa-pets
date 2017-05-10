@@ -13,9 +13,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'rails-i18n'
 gem 'translate_enum'
+gem 'react-rails'
 
-gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 group :development, :test do

@@ -1,5 +1,30 @@
 {
   "name": "dogs",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "3.2.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatosjb/abpa-pets.git"
+  },
+  "author": "Altair J. Fernandes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tatosjb/abpa-pets/issues"
+  },
+  "homepage": "https://github.com/tatosjb/abpa-pets#readme"
 }

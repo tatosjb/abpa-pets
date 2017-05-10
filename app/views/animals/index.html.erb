@@ -1,40 +1,39 @@
+<div class="container-fluid">
 <p id="notice"><%= notice %></p>
-<h1>Animals</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th><%= I18n.t 'activerecord.attributes.animal.code' %></th>
-      <th><%= I18n.t 'activerecord.attributes.animal.pet_type' %></th>
-      <th><%= I18n.t 'activerecord.attributes.animal.size' %></th>
-      <th><%= I18n.t 'activerecord.attributes.animal.fur' %></th>
-      <th><%= I18n.t 'activerecord.attributes.animal.color' %></th>
-      <th><%= I18n.t 'activerecord.attributes.animal.gender' %></th>
-      <th><%= I18n.t 'activerecord.attributes.animal.birthdate' %></th>
-      <th><%= I18n.t 'activerecord.attributes.animal.description' %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @animals.each do |animal| %>
+  <div class="table-responsive">
+    <table class="table">
       <tr>
-        <td><%= animal.code %></td>
-        <td><%= I18n.t(animal.pet_type, scope: 'activerecord.attributes.animal.pet_type_list') %></td>
-        <td><%= I18n.t(animal.size, scope: 'activerecord.attributes.animal.size_list') %></td>
-        <td><%= I18n.t(animal.fur, scope: 'activerecord.attributes.animal.fur_list') %></td>
-        <td><%= I18n.t(animal.color, scope: 'activerecord.attributes.animal.color_list') %></td>
-        <td><%= I18n.t(animal.gender, scope: 'activerecord.attributes.animal.gender_list') %></td>
-        <td><%= animal.birthdate %></td>
-        <td><%= animal.description %></td>
-        <td><%= link_to 'Show', animal %></td>
-        <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-        <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><%= I18n.t 'activerecord.attributes.animal.code' %></th>
+        <th><%= I18n.t 'activerecord.attributes.animal.pet_type' %></th>
+        <th><%= I18n.t 'activerecord.attributes.animal.size' %></div>
+        <th><%= I18n.t 'activerecord.attributes.animal.fur' %></th>
+        <th<%= I18n.t 'activerecord.attributes.animal.color' %></th>
+        <th<%= I18n.t 'activerecord.attributes.animal.gender' %></th>
+        <th><%= I18n.t 'activerecord.attributes.animal.birthdate' %></th>
+        <th><%= I18n.t 'activerecord.attributes.animal.color' %></th>
+        <th><%= I18n.t 'activerecord.attributes.animal.gender' %></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+      <% @animals.each do |animal| %>
+        <tr>
+          <td><%= animal.code %></td>
+          <td><%= I18n.t animal.pet_type, scope: 'activerecord.attributes.animal.pet_type_list' %></td>
+          <td><%= I18n.t animal.size, scope: 'activerecord.attributes.animal.size_list' %></td>
+          <td><%= I18n.t animal.fur, scope: 'activerecord.attributes.animal.fur_list' %></td>
+          <td><%= I18n.l animal.birthdate %></td>
+          <td><%= I18n.t animal.color, scope: 'activerecord.attributes.animal.color_list' %></td>
+          <td><%= I18n.t animal.gender, scope: 'activerecord.attributes.animal.gender_list' %></td>
+          <td><%= link_to I18n.t 'show', animal %></td>
+          <td><%= link_to I18n.t 'edit', edit_animal_path(animal) %></td>
+          <td><%= link_to I18n.t 'destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </table>
 
-<%= link_to 'New Animal', new_animal_path %>
+    <td><%= link_to I18n.t('new_animal'), new_animal_path, class: "btn btn-success" %></td>
+  </div>
+</div>
