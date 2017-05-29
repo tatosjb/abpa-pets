@@ -12,19 +12,9 @@ var app = new Vue({
 
         this.$http.get('animals')
             .then(function (data) {
-                this.$set(app.data, 'data', data.data)
-                this.$set(app.data, 'headers', Object.keys(app.data.data[0]))
+                this.$set(app.data, 'data', data.data);
+                this.$set(app.data, 'headers', Object.keys(app.data.data[0]));
+                app.data.headers.pop(app.data.headers.indexOf("url"));
             });
     }
 });
-//
-// var example2 = new Vue({
-//     el: '#example-2',
-//     data: {
-//         parentMessage: 'Parent',
-//         items: [
-//             { message: 'Foo' },
-//             { message: 'Bar' }
-//         ]
-//     }
-// });

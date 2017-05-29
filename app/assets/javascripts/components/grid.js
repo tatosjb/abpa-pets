@@ -21,11 +21,11 @@ Vue.component('gridLines', {
 Vue.component('grid', {
     props:['items'],
     template:
-        '<table class="table">' +
+        '<table><tbody>' +
         '<gridHeader v-for="header in items.headers" :header="header">' +
         '</gridHeader>' +
         '<gridLines v-for="item in items.data" :data="item" :headers="items.headers">' +
         '</gridLines>' +
-        '</table>'
+        '</tbody></table>'
 });
 
