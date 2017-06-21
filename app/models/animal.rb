@@ -16,5 +16,4 @@ class Animal < ApplicationRecord
   enum gender: [:male, :female]
   translate_enum :gender
 
-
 end

@@ -12,4 +12,8 @@
 //
 //= require third-party
 //= require components
+//= require helpers
 //= require_tree .
+
+I18n.defaultLocale = 'pt-BR';
+I18n.locale = 'pt-BR';
