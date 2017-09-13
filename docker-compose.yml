@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: postgres:9.6.3-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: abpa_development
+      POSTGRES_USER: pg
+      POSTGRES_PASSWORD: pg
+  web:
+    build:
+      context: .
+      args:
+        - user=${USER}
+    command: sh -c "(npm install && rails db:migrate && puma) || (bundle && rails db:migrate && npm install && puma)"
+    links:
+      - db
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
