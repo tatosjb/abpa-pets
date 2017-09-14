@@ -11,13 +11,11 @@
 </head>
 
 <body>
-
-<%= render file: "layouts/navbar" %>
+<%= render template: "layouts/navbar" %>
 
 <div id="my_app" class="container">
   <%= yield %>
 </div>
-
 </body>
 
 <%= javascript_include_tag 'application' %>
