@@ -3,9 +3,7 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
-    "jquery": "3.2.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "jquery": "3.2.1"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
