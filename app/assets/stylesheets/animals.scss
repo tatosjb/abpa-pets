@@ -15,4 +15,17 @@
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
   border-radius: 2px;
+  color: white;
+}
+
+.highlight-cat {
+  @extend .highlight;
+
+  background-color: #ff7622;
+}
+
+.highlight-dog {
+  @extend .highlight;
+
+  background-color: #936d2a;
 }

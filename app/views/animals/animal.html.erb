@@ -1,5 +1,7 @@
 <div class="container col-sm-6 col-md-4 col-lg-4 col-xs-12">
-  <div class="container highlight col-sm-12 col-md-12 col-lg-12 col-xs-12"><%= animal.name %></div>
+  <div class="container highlight-<%= animal.pet_type %> col-sm-12 col-md-12 col-lg-12 col-xs-12">
+    <span><%= I18n.t(animal.pet_type, scope: 'activerecord.attributes.animal.pet_type_list') %> - <%= animal.name %></span>
+  </div>
   <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12 animal-block">
     <div class="col-xs-6 col-sm-6">
       <p>
