@@ -13,7 +13,7 @@ services:
       context: .
       args:
         - user=${USER}
-    command: sh -c "(npm install && rails db:migrate && puma) || (bundle && rails db:migrate && npm install && puma)"
+    command: sh -c "./bin/webpack-dev-server & ./bin/webpack --colors --progress & ((npm install && rails db:migrate && puma) || (bundle && rails db:migrate && npm install && puma))"
     links:
       - db
     volumes:

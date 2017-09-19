@@ -18,6 +18,9 @@ gem "i18n-js"
 gem "sprockets"
 gem "sprockets-es6"
 
+gem "browserify-rails"
+gem 'webpacker', '~> 3.0'
+
 gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
