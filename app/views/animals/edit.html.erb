@@ -1,6 +1,9 @@
-<h1>Editing Animal</h1>
+<div class="container col-sm-12 col-md-12 col-lg-7 col-xs-12">
+  <div class="container highlight-<%= @animal.pet_type %> col-sm-12 col-md-12 col-lg-7 col-xs-12">
+    <h1>Alterando <%= @animal.name %></h1>
+  </div>
+</div>
 
-<%= render 'form', animal: @animal %>
-
-<%= link_to 'Show', @animal %> |
-<%= link_to 'Back', animals_path %>
+<div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12">
+  <%= render 'form', animal: @animal %>
+</div>

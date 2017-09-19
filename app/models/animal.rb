@@ -1,6 +1,9 @@
 class Animal < ApplicationRecord
   include TranslateEnum
 
+  validates :name, presence: true;
+  validates :birthdate, presence: true;
+
   enum pet_type: {dog: 0, cat: 1, wildAnimal: 2, domesticAnimal: 3}
   translate_enum :pet_type
 

@@ -1,7 +1,7 @@
 <%= form_with(model: animal, local: true) do |form| %>
     <% if animal.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
+          <h2>Vocẽ não pode salvar o animal até corrigir os seguintes erros:</h2>
 
           <ul>
             <% animal.errors.full_messages.each do |message| %>
@@ -11,58 +11,59 @@
         </div>
     <% end %>
 
-    <div class="container col-xs-3">
+    <div class="container col-xs-12 col-sm-4 highlight-black-font">
 
-      <div class="row">
+      <div class="col-xs-6">
         <%= form.label :code %>
         <%= form.text_field :code, id: :code, :class => "form-control" %>
       </div>
 
-      <div class="row">
+      <div class="col-xs-12">
         <%= form.label :name %>
         <%= form.text_field :name, id: :name, :class => "form-control" %>
       </div>
 
-      <div class="row">
+      <div class="col-xs-5">
+        <%= form.label :size %>
+        <%= form.select :size, options_for_select(form.object.class.translated_sizes.map {|translation, k, _v| [translation, k]}), {},{:class => "form-control"} %>
+      </div>
+
+      <div class="col-xs-7">
         <%= form.label :pet_type %>
         <%= form.select :pet_type, options_for_select(form.object.class.translated_pet_types.map {|translation, k, _v| [translation, k]}),
                         {}, {:class => "form-control"} %>
       </div>
 
-      <div class="row">
-        <%= form.label :size %>
-        <%= form.select :size, options_for_select(form.object.class.translated_sizes.map {|translation, k, _v| [translation, k]}), {},{:class => "form-control"} %>
-      </div>
-
-      <div class="row">
-        <%= form.label :fur %>
-        <%= form.select :fur, options_for_select(form.object.class.translated_furs.map {|translation, k, _v| [translation, k]}), {},{:class => "form-control"} %>
-      </div>
-
-      <div class="row">
-        <%= form.label :color %>
-        <%= form.select :color, options_for_select(form.object.class.translated_colors.map {|translation, k, _v| [translation, k]}), {},{:class => "form-control"} %>
-      </div>
-
-      <div class="row">
+      <div class="col-xs-5">
         <%= form.label :gender %>
         <%= form.select :gender, options_for_select(form.object.class.translated_genders.map {|translation, k, _v| [translation, k]}), {}, {:class => "form-control"} %>
       </div>
 
-      <div class="row">
+      <div class="col-xs-7">
         <%= form.label :birthdate %>
         <%= form.text_field :birthdate, id: :animal_birthdate, :type => "date", :class => "form-control"%>
       </div>
 
-      <div class="row">
+      <div class="col-xs-8">
+        <%= form.label :color %>
+        <%= form.select :color, options_for_select(form.object.class.translated_colors.map {|translation, k, _v| [translation, k]}), {},{:class => "form-control"} %>
+      </div>
+
+      <div class="col-xs-8">
+        <%= form.label :fur %>
+        <%= form.select :fur, options_for_select(form.object.class.translated_furs.map {|translation, k, _v| [translation, k]}), {},{:class => "form-control"} %>
+      </div>
+
+      <div class="col-xs-12">
         <%= form.label :description %>
         <%= form.text_area :description, id: :animal_description, :class => "form-control"  %>
       </div>
 
+      <div class="container col-xs-12 btn-top-margin">
+        <%= form.submit 'Cadastrar', :class => "btn btn-primary"%>
+        <%= link_to 'Cancelar', animals_path, :class => "btn btn-default" %>
+      </div>
     </div>
 
-    <div class="container col-xs-12">
-      <%= form.submit %>
-    </div>
 <% end %>
 

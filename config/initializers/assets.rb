@@ -19,6 +19,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 # Rails.application.config.assets.precompile += %w( application.scss )
 
+# Rails.application.config.assets.precompile += %w( .svg .eot .woff .ttf )
+
 Rails.application.config.assets.precompile += %w( third-party.js )
 Rails.application.config.assets.precompile += %w( third-party.scss )
 

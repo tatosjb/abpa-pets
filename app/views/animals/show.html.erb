@@ -1,49 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong> <%= I18n.t 'activerecord.attributes.animal.code' %>: </strong>
-  <%= @animal.code %>
-</p>
 
-<p>
-  <strong> <%= I18n.t 'activerecord.attributes.animal.name' %>: </strong>
-  <%= @animal.name %>
-</p>
+<div class="container">
+  <%= render :template => "animals/full-animal", :locals => {:animal => @animal} %>
+</div>
 
-<p>
-  <strong><%= I18n.t 'activerecord.attributes.animal.pet_type' %>: </strong>
-  <%= I18n.t @animal.pet_type, scope: 'activerecord.attributes.animal.pet_type_list' %>
-</p>
-
-<p>
-  <strong><%= I18n.t 'activerecord.attributes.animal.size' %>: </strong>
-  <%= I18n.t @animal.size, scope: 'activerecord.attributes.animal.size_list' %>
-</p>
-
-<p>
-  <strong><%= I18n.t 'activerecord.attributes.animal.fur' %>: </strong>
-  <%= I18n.t @animal.fur, scope: 'activerecord.attributes.animal.fur_list' %>
-</p>
-
-<p>
-  <strong><%= I18n.t 'activerecord.attributes.animal.color' %>: </strong>
-  <%= I18n.t @animal.color, scope: 'activerecord.attributes.animal.color_list' %>
-</p>
-
-<p>
-  <strong><%= I18n.t 'activerecord.attributes.animal.gender' %>: </strong>
-  <%= I18n.t @animal.gender, scope: 'activerecord.attributes.animal.gender_list' %>
-</p>
-
-<p>
-  <strong><%= I18n.t 'activerecord.attributes.animal.birthdate' %>: </strong>
-  <%= I18n.l @animal.birthdate %>
-</p>
-
-<p>
-  <strong><%= I18n.t 'activerecord.attributes.animal.description' %>: </strong>
-  <%= @animal.description %>
-</p>
-
-<%= link_to 'Edit', edit_animal_path(@animal) %> |
-<%= link_to 'Back', animals_path %>

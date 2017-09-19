@@ -1,3 +1,8 @@
+$cat-color: #ff7622;
+$dog-color: #936d2a;
+$wildAnimal-color: #529342;
+$domesticAnimal-color: #2a2f93;
+
 .animal-block {
   position: relative;
   padding: 10px 15px 15px;
@@ -18,14 +23,53 @@
   color: white;
 }
 
+.highlight-black-font {
+  @extend .highlight;
+
+  color: black;
+  margin-bottom: 10px;
+}
+
 .highlight-cat {
   @extend .highlight;
 
-  background-color: #ff7622;
+  background-color: $cat-color;
 }
 
 .highlight-dog {
   @extend .highlight;
 
-  background-color: #936d2a;
+  background-color: $dog-color;
+}
+
+.highlight-wildAnimal {
+  @extend .highlight;
+
+  background-color: $wildAnimal-color;
+}
+
+.highlight-domesticAnimal {
+  @extend .highlight;
+
+  background-color: $domesticAnimal-color;
+}
+
+.font-color-cat {
+  color: $cat-color;
+}
+
+.font-color-dog {
+  color: $dog-color;
+}
+
+.font-color-wildAnimal {
+  color: $wildAnimal-color;
+}
+
+.font-color-domesticAnimal {
+  color: $domesticAnimal-color;
+}
+
+.btn-top-margin {
+  margin-top: 7px;
 }

@@ -8,7 +8,7 @@ pt-BR:
       animals: "Animais"
       animal:
         id: "Id"
-        code: "Código"
+        code: "Tag"
         name: "Nome"
         pet_type: "Tipo"
         pet_type_list:
