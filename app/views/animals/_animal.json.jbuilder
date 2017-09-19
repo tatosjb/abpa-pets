@@ -1,5 +1,6 @@
 json.id animal.id
 json.code animal.code
+json.name animal.name
 json.pet_type I18n.t(animal.pet_type, scope: 'activerecord.attributes.animal.pet_type_list')
 json.size I18n.t(animal.size, scope: 'activerecord.attributes.animal.size_list')
 json.fur I18n.t(animal.fur, scope: 'activerecord.attributes.animal.fur_list')

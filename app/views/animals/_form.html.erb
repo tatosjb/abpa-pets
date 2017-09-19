@@ -1,57 +1,68 @@
 <%= form_with(model: animal, local: true) do |form| %>
-  <% if animal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
+    <% if animal.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(animal.errors.count, "error") %> prohibited this animal from being saved:</h2>
 
-      <ul>
-      <% animal.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% animal.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="container col-xs-3">
+
+      <div class="row">
+        <%= form.label :code %>
+        <%= form.text_field :code, id: :code, :class => "form-control" %>
+      </div>
+
+      <div class="row">
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :name, :class => "form-control" %>
+      </div>
+
+      <div class="row">
+        <%= form.label :pet_type %>
+        <%= form.select :pet_type, options_for_select(form.object.class.translated_pet_types.map {|translation, k, _v| [translation, k]}),
+                        {}, {:class => "form-control"} %>
+      </div>
+
+      <div class="row">
+        <%= form.label :size %>
+        <%= form.select :size, options_for_select(form.object.class.translated_sizes.map {|translation, k, _v| [translation, k]}), {},{:class => "form-control"} %>
+      </div>
+
+      <div class="row">
+        <%= form.label :fur %>
+        <%= form.select :fur, options_for_select(form.object.class.translated_furs.map {|translation, k, _v| [translation, k]}), {},{:class => "form-control"} %>
+      </div>
+
+      <div class="row">
+        <%= form.label :color %>
+        <%= form.select :color, options_for_select(form.object.class.translated_colors.map {|translation, k, _v| [translation, k]}), {},{:class => "form-control"} %>
+      </div>
+
+      <div class="row">
+        <%= form.label :gender %>
+        <%= form.select :gender, options_for_select(form.object.class.translated_genders.map {|translation, k, _v| [translation, k]}), {}, {:class => "form-control"} %>
+      </div>
+
+      <div class="row">
+        <%= form.label :birthdate %>
+        <%= form.text_field :birthdate, id: :animal_birthdate, :type => "date", :class => "form-control"%>
+      </div>
+
+      <div class="row">
+        <%= form.label :description %>
+        <%= form.text_area :description, id: :animal_description, :class => "form-control"  %>
+      </div>
+
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code, id: :code  %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pet_type %>
-    <%= form.select :pet_type, options_for_select(form.object.class.translated_pet_types.map { |translation, k, _v| [translation, k] })  %>
-  </div>
-
-  <div class="field">
-    <%= form.label :size %>
-    <%= form.select :size, options_for_select(form.object.class.translated_sizes.map { |translation, k, _v| [translation, k] })  %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fur %>
-    <%= form.select :fur, options_for_select(form.object.class.translated_furs.map { |translation, k, _v| [translation, k] })  %>
-  </div>
-
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.select :color, options_for_select(form.object.class.translated_colors.map { |translation, k, _v| [translation, k] })  %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.select :gender, options_for_select(form.object.class.translated_genders.map { |translation, k, _v| [translation, k] })  %>
-  </div>
-
-  <div class="field">
-    <%= form.label :birthdate %>
-    <%= form.date_select :birthdate, id: :animal_birthdate, start_year: 2000 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :animal_description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="container col-xs-12">
+      <%= form.submit %>
+    </div>
 <% end %>
+

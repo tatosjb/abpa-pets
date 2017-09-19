@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong> <%= I18n.t 'activerecord.attributes.animal.name' %>: </strong>
+  <%= @animal.name %>
+</p>
+
+<p>
   <strong><%= I18n.t 'activerecord.attributes.animal.pet_type' %>: </strong>
   <%= I18n.t @animal.pet_type, scope: 'activerecord.attributes.animal.pet_type_list' %>
 </p>

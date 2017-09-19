@@ -9,6 +9,7 @@ pt-BR:
       animal:
         id: "Id"
         code: "Código"
+        name: "Nome"
         pet_type: "Tipo"
         pet_type_list:
           dog: "Cachorro"
