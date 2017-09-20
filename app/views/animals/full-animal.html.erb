@@ -4,14 +4,18 @@
       - <%= animal.name %></span>
   </div>
   <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12 animal-block">
-    <div class="col-xs-12 col-sm-12">
-      <p>
-        <b>
-          <div><%= I18n.t 'activerecord.attributes.animal.code' %></div>
-        </b>
-        <span><%= animal.code %> <%= "Sem tag" if animal.code.blank? %></span>
-      </p>
-    </div>
+
+    <% if !animal.code.blank? then %>
+        <div class="col-xs-12 col-sm-12">
+          <p>
+            <b>
+              <div><%= I18n.t 'activerecord.attributes.animal.code' %></div>
+            </b>
+            <span><%= animal.code %> <%= "Sem tag" if animal.code.blank? %></span>
+          </p>
+        </div>
+    <% end %>
+
     <div class="col-xs-6 col-sm-6">
       <p>
         <b>
@@ -47,8 +51,26 @@
         <span><%= I18n.t(animal.gender, scope: 'activerecord.attributes.animal.gender_list') %></span>
       </p>
       <p>
-        <%= link_to 'Editar', edit_animal_path(@animal), :class => "btn btn-primary" %>
+        <b>
+          <div><%= I18n.t 'activerecord.attributes.animal.birthdate' %></div>
+        </b>
+        <span><%= animal.birthdate %></span>
       </p>
+    </div>
+
+    <% if !animal.description.blank? then %>
+        <div class="col-xs-12 col-sm-12">
+          <p>
+            <b>
+              <div><%= I18n.t 'activerecord.attributes.animal.description' %></div>
+            </b>
+            <span><%= animal.description %></span>
+          </p>
+        </div>
+    <% end %>
+
+    <div class="col-xs-12 col-sm-12">
+      <a href="<%= edit_animal_path(@animal) %>" class="btn btn-default">Editar</a>
     </div>
   </div>
 </div>

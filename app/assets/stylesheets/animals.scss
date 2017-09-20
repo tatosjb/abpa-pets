@@ -30,6 +30,15 @@ $domesticAnimal-color: #2a2f93;
   margin-bottom: 10px;
 }
 
+.highlight-black-font-explanation {
+  @extend .highlight-black-font;
+
+  background-color: #fffff9;
+  border-radius: 6px;
+  padding: 0px 0px;
+  margin-top: 10px;
+}
+
 .highlight-cat {
   @extend .highlight;
 
