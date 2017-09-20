@@ -1,0 +1,57 @@
+<%= form_with(model: person, local: true) do |form| %>
+  <% if person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :person_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rg %>
+    <%= form.text_field :rg, id: :person_rg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf, id: :person_cpf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :occupation %>
+    <%= form.text_field :occupation, id: :person_occupation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company %>
+    <%= form.text_field :company, id: :person_company %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :person_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :neighborhood %>
+    <%= form.text_field :neighborhood, id: :person_neighborhood %>
+  </div>
+
+  <div class="field">
+    <%= form.label :referece_point %>
+    <%= form.text_field :referece_point, id: :person_referece_point %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
