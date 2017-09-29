@@ -1,0 +1,80 @@
+<div class="container col-sm-6 col-md-4 col-lg-4 col-xs-12">
+  <div class="container highlight-people col-sm-12 col-md-12 col-lg-12 col-xs-12">
+    <span><%= person.name %></span>
+    <div class="pull-right">
+      <a href="<%= edit_person_path(person) %>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit-person-modal"></span></a>
+      <a href="<%= person_path(person) %>" class="btn btn-default btn-xs" data-toggle="modal" data-target="#show-person-modal"><span class="glyphicon glyphicon-search"></span></a>
+    </div>
+  </div>
+  <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12 animal-block">
+    <div class="col-xs-8 col-sm-8">
+      <div class="col-sm-12">
+        <% if !person.name.empty? then %>
+            <p>
+              <b>
+                <div><%= I18n.t 'activerecord.attributes.people.name' %></div>
+              </b>
+              <span><%= person.name %></span>
+            </p>
+        <% end %>
+      </div>
+
+      <div class="col-sm-6">
+        <p>
+          <b>
+            <div><%= I18n.t 'activerecord.attributes.people.rg' %></div>
+          </b>
+          <span><%= person.rg.empty? ? "Sem rg" : person.rg %></span>
+        </p>
+      </div>
+      <div class="col-sm-6">
+        <p>
+          <b>
+            <div><%= I18n.t 'activerecord.attributes.people.cpf' %></div>
+          </b>
+          <span><%= person.cpf.empty? ? "Sem cpf" : person.cpf %></span>
+        </p>
+      </div>
+      <div class="col-sm-12">
+        <% if !person.occupation.empty? then %>
+            <p>
+              <b>
+                <div><%= I18n.t 'activerecord.attributes.people.occupation' %></div>
+              </b>
+              <span><%= person.occupation %></span>
+            </p>
+        <% end %>
+      </div>
+      <div class="col-sm-12">
+        <% if !person.address.empty? then %>
+            <p>
+              <b>
+                <div><%= I18n.t 'activerecord.attributes.people.address' %></div>
+              </b>
+              <span><%= person.address %></span>
+            </p>
+        <% end %>
+      </div>
+      <div class="col-sm-12">
+        <% if !person.neighborhood.empty? then %>
+            <p>
+              <b>
+                <div><%= I18n.t 'activerecord.attributes.people.neighborhood' %></div>
+              </b>
+              <span><%= person.neighborhood %></span>
+            </p>
+        <% end %>
+      </div>
+      <div class="col-sm-12">
+        <% if !person.referece_point.empty? then %>
+            <p>
+              <b>
+                <div><%= I18n.t 'activerecord.attributes.people.referece_point' %></div>
+              </b>
+              <span><%= person.referece_point %></span>
+            </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

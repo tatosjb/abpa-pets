@@ -41,7 +41,7 @@ GEM
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (8.0.0)
-    autoprefixer-rails (7.1.4)
+    autoprefixer-rails (7.1.4.1)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)

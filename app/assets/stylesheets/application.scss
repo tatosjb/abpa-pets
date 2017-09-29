@@ -10,18 +10,27 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
-@import "third-party";
+
+/*
+*= require_tree .
+*= require_self
+*/
 
 body {
   padding-top: 50px;
 }
 
-
 #my_app {
   padding-left: 0px;
   padding-right: 0px;
+}
+
+@import "third-party";
+
+label.required:after{content:" *"}
+
+label.required {
+  color: darkred;
 }

@@ -1,0 +1,16 @@
+pt-BR:
+  show: "Exibir"
+  edit: "Editar"
+  destroy: "Apagar"
+  new_animal: "Novo"
+  activerecord:
+    attributes:
+      person: "Pessoa"
+      people:
+        name: "Nome"
+        rg: "RG"
+        cpf: "CPF"
+        occupation: "Ocupação"
+        address: "Endereço"
+        neighborhood: "Bairro"
+        referece_point: "Ponto de referência"
