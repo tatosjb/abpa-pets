@@ -1,57 +1,54 @@
 <%= form_with(model: person, local: true) do |form| %>
-  <% if person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
-
-      <ul>
-      <% person.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="col-xs-12">
+      <%= form.label :name, :class => "required" %>
+      <%= form.text_field :name, id: :person_name, :id => "#{locals[:prefix]}-name", :class => "form-control required"  %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :person_name %>
-  </div>
+    <div class="col-xs-6">
+      <%= form.label :rg %>
+      <%= form.text_field :rg, id: :person_rg, :class => "form-control", :id => "#{locals[:prefix]}-rg"  %>
+    </div>
 
-  <div class="field">
-    <%= form.label :rg %>
-    <%= form.text_field :rg, id: :person_rg %>
-  </div>
+    <div class="col-xs-6">
+      <%= form.label :cpf, :class => "required" %>
+      <%= form.text_field :cpf, id: :person_cpf, :class => "form-control required", :id => "#{locals[:prefix]}-cpf"  %>
+    </div>
 
-  <div class="field">
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf, id: :person_cpf %>
-  </div>
+    <div class="col-xs-6">
+      <%= form.label :occupation %>
+      <%= form.text_field :occupation, id: :person_occupation, :class => "form-control", :id => "#{locals[:prefix]}-occupation" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :occupation %>
-    <%= form.text_field :occupation, id: :person_occupation %>
-  </div>
+    <div class="col-xs-6">
+      <%= form.label :company %>
+      <%= form.text_field :company, id: :person_company, :class => "form-control", :id => "#{locals[:prefix]}-company" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :company %>
-    <%= form.text_field :company, id: :person_company %>
-  </div>
+    <div class="col-xs-7">
+      <%= form.label :ibge_code, :class => "required" %>
+      <select class="form-control required" id="<%= "#{locals[:prefix]}-ibge_code" %>">
+        <option>Selecione a cidade</option>
+        <option <%= "selected=\"\"" if person.ibge_code.equal? 4202909 %> value="4202909">Brusque</option>
+        <option <%= "selected=\"\"" if person.ibge_code.equal? 4203709 %> value="4203709">Canelinha</option>
+        <option <%= "selected=\"\"" if person.ibge_code.equal? 4210209 %> value="4210209">Major Gercino</option>
+        <option <%= "selected=\"\"" if person.ibge_code.equal? 4211504 %> value="4211504">Nova Trento</option>
+        <option <%= "selected=\"\"" if person.ibge_code.equal? 4218004 %> value="4218004">Tijucas</option>
+        <option <%= "selected=\"\"" if person.ibge_code.equal? 4216305 %> value="4216305">São João Batista</option>
+      </select>
+    </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :person_address %>
-  </div>
+    <div class="col-xs-12">
+      <%= form.label :address, :class => "required" %>
+      <%= form.text_field :address, id: :person_address, :class => "form-control required", :id => "#{locals[:prefix]}-address" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :neighborhood %>
-    <%= form.text_field :neighborhood, id: :person_neighborhood %>
-  </div>
+    <div class="col-xs-8">
+      <%= form.label :neighborhood, :class => "required" %>
+      <%= form.text_field :neighborhood, id: :person_neighborhood, :class => "form-control required", :id => "#{locals[:prefix]}-neighborhood" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :referece_point %>
-    <%= form.text_field :referece_point, id: :person_referece_point %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="col-xs-8">
+      <%= form.label :referece_point %>
+      <%= form.text_field :referece_point, id: :person_referece_point, :class => "form-control", :id => "#{locals[:prefix]}-reference_point" %>
+    </div>
 <% end %>

@@ -11,9 +11,10 @@
   color: white;
 }
 
-.highlight-people {
+.highlight-person {
   @extend .highlight;
 
-  color: black;
+  background-color: black;
+  color: white;
 }
 

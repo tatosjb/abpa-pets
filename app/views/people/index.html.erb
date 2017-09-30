@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container col-xs-12">
+  <p class="pull-right">
+    <button class="btn btn-primary" data-toggle="modal"
+            data-target="#newPersonModal">Nova pessoa</button>
+  </p>
+</div>
+
 <% @people.each do |person| %>
-    <%= render :template => "people/people", :locals => {:person => person} %>
+    <%= render :template => "people/person", :locals => {:person => person} %>
 <% end %>
 
+<%= render :template => "people/new", :locals => {:@person => Person.new} %>

@@ -1,11 +1,3 @@
-const printErrors = function (response, fieldPrefix) {
-    console.log(response);
-    Object.keys(response.data).forEach(function (value) {
-        console.log(value);
-        $("#" + fieldPrefix + "-" + value).addClass("field-validation-error");
-    })
-};
-
 class AnimalsController {
     constructor(csrfToken) {
         this.csrfToken = csrfToken;
@@ -14,8 +6,6 @@ class AnimalsController {
                 'X-CSRF-Token': this.csrfToken
             }
         };
-
-        console.log(csrfToken);
     }
 
     edit(id, animal) {
@@ -24,7 +14,7 @@ class AnimalsController {
                 window.location.href = location.protocol + "//" + location.host;
             })
             .catch(function (error) {
-                printErrors(error.response, "edit-" + id);
+                this.printErrors(error.response, "edit-" + id);
                 $(".send-button").button("reset");
             });
     }
@@ -35,9 +25,15 @@ class AnimalsController {
                 window.location.href = location.protocol + "//" + location.host;
             })
             .catch(function (error) {
-                printErrors(error.response, "new");
+                this.printErrors(error.response, "new");
                 $(".send-button").button("reset");
             });
     }
+
+    printErrors(response, fieldPrefix) {
+        Object.keys(response.data).forEach(function (value) {
+            $("#" + fieldPrefix + "-" + value).addClass("field-validation-error");
+        })
+    };
 
 };
