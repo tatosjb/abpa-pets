@@ -1,9 +1,25 @@
-<div class="container col-sm-12 col-md-12 col-lg-7 col-xs-12">
-  <div class="container highlight-<%= @animal.pet_type %> col-sm-12 col-md-12 col-lg-7 col-xs-12">
-    <h1>Alterando <%= @animal.name %></h1>
-  </div>
-</div>
+<div class="modal fade" id="edit-<%= @animal.id %>AnimalModal" tabindex="-1" role="dialog" aria-labelledby="edit-<%= @animal.id %>AnimalModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
 
-<div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12">
-  <%= render 'form', animal: @animal %>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="edit-<%= @animal.id %>AnimalModalLabel">Alterando <%= @animal.name %></h4>
+      </div>
+
+      <div class="container modal-body">
+        <div class="container col-xs-12 col-sm-6">
+          <%= render 'form', animal: @animal, :locals => { :prefix => "edit-#{@animal.id}" } %>
+          <div class="modal-footer">
+            <div class="container col-xs-12 btn-top-margin">
+              <a onclick="animals.edit(<%= @animal.id %>)" class="btn btn-primary send-button">Salvar</a>
+              <%= link_to 'Cancelar', animals_path, :class => "btn btn-default" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>

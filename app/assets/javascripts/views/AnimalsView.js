@@ -2,22 +2,37 @@ animals = function () {
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
     var animalsController = new AnimalsController(csrfToken);
 
-    function create () {
-        var newAnimal = {};
-        newAnimal.code = $('#code').val();
-        newAnimal.name = $('#name').val();
-        newAnimal.size = $('#size').val();
-        newAnimal.pet_type = $('#pet_type').val();
-        newAnimal.gender = $('#gender').val();
-        newAnimal.birthdate = $('#birthdate').val();
-        newAnimal.color = $('#color').val();
-        newAnimal.fur = $('#fur').val();
-        newAnimal.description = $('#description').val();
+    $(".required").keypress(function () {
+        $(this).removeClass("field-validation-error");
+    });
 
-        animalsController.new(newAnimal);
+    function getAnimalInfo(prefix) {
+        var newAnimal = {};
+        newAnimal.code = $('#' + prefix + '-code').val();
+        newAnimal.name = $('#' + prefix + '-name').val();
+        newAnimal.size = $('#' + prefix + '-size').val();
+        newAnimal.pet_type = $('#' + prefix + '-pet_type').val();
+        newAnimal.gender = $('#' + prefix + '-gender').val();
+        newAnimal.birthdate = $('#' + prefix + '-birthdate').val();
+        newAnimal.color = $('#' + prefix + '-color').val();
+        newAnimal.fur = $('#' + prefix + '-fur').val();
+        newAnimal.description = $('#' + prefix + '-description').val();
+
+        return newAnimal;
+    }
+
+    function create () {
+        animalsController.new(getAnimalInfo('new'));
+        $(".send-button").button("loading");
+    }
+
+    function edit(id) {
+        animalsController.edit(id, getAnimalInfo('edit-' + id));
+        $(".send-button").button("loading");
     }
 
     return {
-        create: create
+        create: create,
+        edit: edit
     }
 }();

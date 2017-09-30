@@ -8,7 +8,17 @@
         <h4 class="modal-title" id="newAnimalModalLabel">Novo animal</h4>
       </div>
 
-      <%= render 'form', animal: @animal %>
+      <div class="container modal-body">
+        <div class="container col-xs-12 col-sm-6">
+          <%= render 'form', animal: @animal, :locals => { :prefix => "new" } %>
+          <div class="modal-footer">
+            <div class="container col-xs-12 btn-top-margin">
+              <a onclick="animals.create()" class="btn btn-primary send-button">Salvar</a>
+              <%= link_to 'Cancelar', animals_path, :class => "btn btn-default" %>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

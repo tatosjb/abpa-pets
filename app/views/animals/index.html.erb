@@ -3,8 +3,7 @@
 <div class="container col-xs-12">
   <p class="pull-right">
     <button class="btn btn-primary" data-toggle="modal"
-            data-target="#newAnimalModal">Novo animal
-    </button>
+            data-target="#newAnimalModal">Novo animal</button>
   </p>
 </div>
 
@@ -13,3 +12,4 @@
 <% end %>
 
 <%= render :template => "animals/new", :locals => {:@animal => Animal.new} %>
+
