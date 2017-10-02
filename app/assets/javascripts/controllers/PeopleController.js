@@ -11,6 +11,8 @@ class PeopleController {
     static printErrors(response, fieldPrefix) {
         Object.keys(response.data).forEach(function (value) {
             $("#" + fieldPrefix + "-" + value).addClass("field-validation-error");
+            $("#" + fieldPrefix + "-" + value).attr("title", response.data[value][0]);
+            $("#" + fieldPrefix + "-" + value).tooltip("show");
         })
     };
 

@@ -10,7 +10,8 @@
     </div>
 
     <div class="col-xs-6">
-      <%= form.label :cpf, :class => "required" %>
+      <!--<%= form.label :cpf, :class => "required" %>-->
+      <label><%= :cpf %></label>
       <%= form.text_field :cpf, id: :person_cpf, :class => "form-control required", :id => "#{locals[:prefix]}-cpf"  %>
     </div>
 

@@ -1,4 +1,5 @@
 class Person < ApplicationRecord
-  validates :name, :cpf, :ibge_code, :address, :neighborhood, presence: true
+  validates :name, :ibge_code, :address, :neighborhood, presence: true
 
+  validates :cpf, presence: true, uniqueness: true
 end
