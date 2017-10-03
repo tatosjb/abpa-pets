@@ -43,8 +43,8 @@
         <span><%= I18n.t(animal.gender, scope: 'activerecord.attributes.animal.gender_list') %></span>
       </p>
       <p>
-        <%= link_to 'Doar', animal_path(animal), :class => "btn btn-default" %>
-        <!--<a href="animals/<%= animal.id %>" class="btn btn-default">Doar</a>-->
+        <!--<%= link_to 'Doar', animal_path(animal), :class => "btn btn-default" %>-->
+        <a href="<%= adoptions_path(animal) %>" class="btn btn-default">Doar</a>
       </p>
     </div>
   </div>

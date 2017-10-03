@@ -1,0 +1,2 @@
+class AdoptionController < ApplicationController
+end
