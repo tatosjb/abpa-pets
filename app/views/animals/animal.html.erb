@@ -43,11 +43,13 @@
         <span><%= I18n.t(animal.gender, scope: 'activerecord.attributes.animal.gender_list') %></span>
       </p>
       <p>
-        <!--<%= link_to 'Doar', animal_path(animal), :class => "btn btn-default" %>-->
-        <a href="<%= adoptions_path(animal) %>" class="btn btn-default">Doar</a>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-donate-<%= animal.id %>">
+          Doar
+        </button>
       </p>
     </div>
   </div>
 </div>
 
 <%= render :template => "animals/edit", :locals => {:@animal => animal} %>
+<%= render :template => "adoption/donate", :locals => {:@animal => animal} %>

@@ -38,4 +38,11 @@ class PeopleController {
                 $(".send-button").button("reset");
             });
     }
+
+    find(query){
+        PromiseQueue.getInstance()
+            .handlePromise("find", function () {
+                return axios.get('/people/find/' + query, this.axiosConfig)
+            })
+    }
 };

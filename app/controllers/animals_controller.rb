@@ -47,9 +47,7 @@ class AnimalsController < ApplicationController
         format.json {render :show, status: :ok, location: @animal}
       else
         format.html {render :edit}
-        format.json {
-          render json: @animal.errors, status: :unprocessable_entity
-        }
+        format.json {render json: @animal.errors, status: :unprocessable_entity}
       end
     end
   end

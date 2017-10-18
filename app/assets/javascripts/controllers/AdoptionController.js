@@ -1,4 +1,4 @@
-class AnimalsController {
+class AdoptionController {
     constructor(csrfToken) {
         this.csrfToken = csrfToken;
         this.axiosConfig = {
@@ -16,21 +16,11 @@ class AnimalsController {
         })
     };
 
-    edit(id, animal) {
-        axios.put('/animals/' + id + '.json', animal, this.axiosConfig)
+    donate(donation) {
+        console.log(donation);
+        axios.post('/donate', donation, this.axiosConfig)
             .then(function (response) {
-                window.location.href = location.protocol + "//" + location.host;
-            })
-            .catch(function (error) {
-                AnimalsController.printErrors(error.response, "edit-" + id);
-                $(".send-button").button("reset");
-            });
-    }
-
-    new(animal) {
-        axios.post('/animals.json', animal, this.axiosConfig)
-            .then(function (response) {
-                window.location.href = location.protocol + "//" + location.host;
+                window.location.href = location.protocol + "//" + location.host + "/animals/" + donation.animal_id;
             })
             .catch(function (error) {
                 AnimalsController.printErrors(error.response, "new");

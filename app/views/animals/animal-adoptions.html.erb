@@ -1,0 +1,13 @@
+<div class="container col-sm-6 col-md-8 col-lg-8 col-xs-12">
+  <div class="container highlight-person col-sm-12 col-md-12 col-lg-12 col-xs-12">
+    <span>Adoções</span>
+  </div>
+  <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12 animal-block">
+    <ul class="list-group">
+      <% @animal.adoptions.each do |adoption| %>
+          <li class="list-group-item"><%= @animal.name %> foi doado para <b><%= adoption.person.name %></b>
+            em <%= I18n.l adoption.created_at.to_date %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

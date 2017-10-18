@@ -1,6 +1,8 @@
 class Animal < ApplicationRecord
   include TranslateEnum
 
+  has_many :adoptions
+
   validates :name, presence: true
   validates :birthdate, presence: true
 

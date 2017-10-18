@@ -31,6 +31,10 @@ people = function () {
         $(".send-button").button("loading");
     }
 
+    function findPeople(query) {
+        return peopleController.find(query);
+    }
+
     return {
         create: create,
         edit: edit

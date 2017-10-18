@@ -11,10 +11,13 @@ gem 'pg', '~> 0.21.0'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem "select2-rails"
 gem 'uglifier', '>= 1.3.0'
 gem 'rails-i18n'
 gem 'translate_enum'
 gem "i18n-js"
+gem "active_model_serializers"
+gem 'will_paginate', '>= 3.1'
 
 gem "sprockets"
 gem "sprockets-es6"

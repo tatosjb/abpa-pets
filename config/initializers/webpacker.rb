@@ -1,0 +1,1 @@
+Webpacker::Compiler.watched_paths << 'bower_components'
