@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get '/people/find/:query', to: 'people#find'
   get '/people/find', to: 'people#find'
   resources :people

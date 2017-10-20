@@ -18,6 +18,7 @@ gem 'translate_enum'
 gem "i18n-js"
 gem "active_model_serializers"
 gem 'will_paginate', '>= 3.1'
+gem 'devise'
 
 gem "sprockets"
 gem "sprockets-es6"

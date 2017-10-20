@@ -1,11 +1,19 @@
 class AnimalsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_animal, only: [:show, :edit, :update, :destroy]
-
 
   # GET /animals
   # GET /animals.json
   def index
-    @animals = Animal.all
+    @animals = if params[:q]
+      if params[:q].to_i > 0
+        Animal.where(id: params[:q])
+      else
+        Animal.where("upper(name) like ?", "%#{params[:q].upcase}%")
+      end
+    else
+      Animal.all
+    end
   end
 
   # GET /animals/1

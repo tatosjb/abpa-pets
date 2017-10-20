@@ -2,6 +2,10 @@
   <div class="container highlight-<%= animal.pet_type %> col-sm-12 col-md-12 col-lg-12 col-xs-12">
     <span><%= I18n.t(animal.pet_type, scope: 'activerecord.attributes.animal.pet_type_list') %>
       - <%= animal.name %></span>
+    <div class="pull-right">
+
+      <button data-toggle="modal" data-target="#edit-<%= animal.id %>AnimalModal" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>
+    </div>
   </div>
   <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12 animal-block">
 
@@ -70,7 +74,11 @@
     <% end %>
 
     <div class="col-xs-12 col-sm-12">
-      <a href="<%= edit_animal_path(@animal) %>" class="btn btn-default">Editar</a>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-donate-<%= animal.id %>">
+        Doar
+      </button>
     </div>
   </div>
 </div>
+
+<%= render :template => "animals/edit", :locals => {:@animal => animal} %>

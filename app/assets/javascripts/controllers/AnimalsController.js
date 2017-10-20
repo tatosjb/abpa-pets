@@ -19,7 +19,7 @@ class AnimalsController {
     edit(id, animal) {
         axios.put('/animals/' + id + '.json', animal, this.axiosConfig)
             .then(function (response) {
-                window.location.href = location.protocol + "//" + location.host;
+                window.location.href = location.protocol + "//" + location.host + "/animals/" + id;
             })
             .catch(function (error) {
                 AnimalsController.printErrors(error.response, "edit-" + id);
