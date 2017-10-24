@@ -4,21 +4,31 @@
       - <%= animal.name %></span>
     <div class="pull-right">
 
-      <button data-toggle="modal" data-target="#edit-<%= animal.id %>AnimalModal" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>
+      <button data-toggle="modal" data-target="#edit-<%= animal.id %>AnimalModal" class="btn btn-default btn-xs">
+        <span class="glyphicon glyphicon-pencil"></span></button>
     </div>
   </div>
   <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12 animal-block">
 
-    <% if !animal.code.blank? then %>
-        <div class="col-xs-12 col-sm-12">
+    <div class="col-xs-6 col-sm-6">
+      <p>
+        <b>
+          <div><%= I18n.t 'activerecord.attributes.animal.id' %></div>
+        </b>
+        <span><%= animal.id %> </span>
+      </p>
+    </div>
+
+    <div class="col-xs-6 col-sm-6">
+      <% if !animal.code.blank? then %>
           <p>
             <b>
               <div><%= I18n.t 'activerecord.attributes.animal.code' %></div>
             </b>
             <span><%= animal.code %> <%= "Sem tag" if animal.code.blank? %></span>
           </p>
-        </div>
-    <% end %>
+      <% end %>
+    </div>
 
     <div class="col-xs-6 col-sm-6">
       <p>
@@ -82,3 +92,4 @@
 </div>
 
 <%= render :template => "animals/edit", :locals => {:@animal => animal} %>
+<%= render :template => "adoption/donate", :locals => {:@animal => animal} %>

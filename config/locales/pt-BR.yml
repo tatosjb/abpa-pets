@@ -3,3 +3,6 @@ pt-BR:
   edit: "Editar"
   destroy: "Apagar"
   new_animal: "Novo"
+  errors:
+    messages:
+      not_saved: "Rejeitado"

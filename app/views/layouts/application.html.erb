@@ -12,7 +12,11 @@
 
 <body>
 
-<%= render template: "layouts/signed-application" %>
+<%= render template: "layouts/navbar" %>
+
+<div id="my_app" class="container">
+  <%= yield %>
+</div>
 
 </body>
 
