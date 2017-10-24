@@ -20,14 +20,12 @@
     </div>
 
     <div class="col-xs-6 col-sm-6">
-      <% if !animal.code.blank? then %>
           <p>
             <b>
               <div><%= I18n.t 'activerecord.attributes.animal.code' %></div>
             </b>
-            <span><%= animal.code %> <%= "Sem tag" if animal.code.blank? %></span>
+            <span><%= !animal.code.blank? ? animal.code : '-' %></span>
           </p>
-      <% end %>
     </div>
 
     <div class="col-xs-6 col-sm-6">
