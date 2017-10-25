@@ -37,6 +37,10 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+  RSpec.configure do |config|
+    config.include(Shoulda::Matchers::ActiveModel, type: :model)
+    config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+  end
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

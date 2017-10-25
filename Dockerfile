@@ -27,4 +27,6 @@ RUN sudo chown $user /app
 WORKDIR /app
 
 # Install basic rails gems in image
-RUN rails new . --database=postgresql
+RUN rails new . --database=postgresql --skip-bundle
+
+RUN bundle install
