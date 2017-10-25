@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Server
+Services will be started:
 
-Things you may want to cover:
+* Puma;
 
-* Ruby version
+## Setup Docker
 
-* System dependencies
+You need to have docker installed (Tested with version 17.05 of Docker).
 
-* Configuration
+        $ docker-compose build
+        $ docker-compose up
 
-* Database creation
+### Update CEST
+This step is for update the CEST, according of the "Convênios de ICMS" from the government page publication.
 
-* Database initialization
+Download the updated csv CEST file.
+Upload it to portal.
 
-* How to run the test suite
+Go to heroku bash , on https://dashboard.heroku.com/apps/isa-ibpt?web-console=isa-ibpt
 
-* Services (job queues, cache servers, search engines, etc.)
+Put the command on the input rake IsaErp:import_ibpt url='**updated csv file download url from portal**', changing the download url to the copied url from portal.
 
-* Deployment instructions
+### Tests
 
-* ...
+        $ RAILS_ENV=test docker-compose run --rm web rspec
