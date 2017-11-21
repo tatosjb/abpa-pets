@@ -58,4 +58,12 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  Cloudinary.config do |c|
+    c.cloud_name = Figaro.env.cloud_name
+    c.api_key = Figaro.env.api_key
+    c.api_secret = Figaro.env.api_secret
+    c.enhance_image_tag = Figaro.env.enhance_image_tag
+    c.static_image_support = Figaro.env.static_image_support
+  end
 end
