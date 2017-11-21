@@ -1,8 +1,8 @@
 <p id="notice"></p>
 
 
-<div class="container">
-  <%= render :template => "animals/full-animal", :locals => {:animal => @animal} %>
-  <%= render :template => "animals/animal-adoptions", :locals => {:animal => @animal} %>
-</div>
+<%= render :template => "animals/full-animal", :locals => {:animal => @animal} %>
+<%= render :template => "animals/animal-adoptions", :locals => {:animal => @animal} %>
+<%= render :template => "images/image-upload", :locals => {:animal => @animal} %>
+<%= render :template => "images/photos", :locals => {:model => @animal} if @animal.images.any? %>
 

@@ -1,0 +1,6 @@
+<div class="container col-sm-6 col-md-12 col-lg-4 col-xs-12">
+  <%= form_tag(save_image_path, :method => :post, :class => "form-control") do %>
+      <input type="hidden" id="animal_id" value="<%= animal.id %>" name="animal_id"/>
+      <%= cl_image_upload_tag(:image_id, options = {}) %>
+  <% end %>
+</div>

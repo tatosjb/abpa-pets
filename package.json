@@ -7,7 +7,11 @@
     "bootstrap-sass": "^3.3.7",
     "browserify": "^14.0.0",
     "browserify-incremental": "^3.1.0",
+    "cloudinary": "^1.9.1",
+    "cloudinary-jquery": "^2.3.0",
+    "cloudinary-jquery-file-upload": "^2.3.0",
     "jquery": "3.2.1",
+    "lightbox2": "^2.9.0",
     "modernizr": "3.5.0",
     "select2-bootstrap-theme": "^0.1.0-beta.10"
   },

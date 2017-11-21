@@ -37,4 +37,11 @@ class AnimalsController {
                 $(".send-button").button("reset");
             });
     }
+
+    saveImage(image) {
+        axios.post("/images/save", image, this.axiosConfig)
+            .then(function (response) {
+                location.reload();
+            });
+    }
 };

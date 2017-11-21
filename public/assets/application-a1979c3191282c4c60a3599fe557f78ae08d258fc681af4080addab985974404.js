@@ -17686,6 +17686,9 @@ class AnimalsController {
             });
     }
 
+    saveImage(val, public_id) {
+
+    }
 };
 class PeopleController {
     constructor(csrfToken) {

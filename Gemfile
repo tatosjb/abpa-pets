@@ -20,6 +20,8 @@ gem "active_model_serializers"
 gem 'will_paginate', '>= 3.1'
 gem 'devise'
 
+gem 'cloudinary'
+
 gem "sprockets"
 gem "sprockets-es6"
 
@@ -38,6 +40,7 @@ group :development, :test do
   gem 'sprockets-rails', '3.2.0'
   gem 'factory_girl_rails', '4.5.0'
   gem "shoulda-matchers", "3.1.1"
+  gem 'figaro'
 end
 
 group :development do

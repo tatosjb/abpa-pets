@@ -6,7 +6,6 @@ Rails.application.config.assets.version = '1.0'
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
 # Add Yarn node_modules folder to the asset load path.
-Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 # Rails.application.config.logger = Logger.new(STDOUT)
 # Rails.application.config.logger.debug Rails.application.config.assets.paths.to_s
@@ -24,3 +23,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( third-party.js )
 Rails.application.config.assets.precompile += %w( third-party.scss )
 
+Rails.application.config.assets.paths << Rails.root.join('node_modules')

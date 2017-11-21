@@ -6,6 +6,19 @@ animals = function () {
         $(this).removeClass("field-validation-error");
     });
 
+    if ($.fn.cloudinary_fileupload !== undefined) {
+        $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
+
+        $(".cloudinary-fileupload").bind("cloudinarydone", function (e, data) {
+            var image = {};
+            image.animal_id = $("#animal_id").val();
+            image.image_id = data.result.public_id;
+            animalsController.saveImage(image);
+
+            console.log(data);
+        });
+    }
+
     function getAnimalInfo(prefix) {
         var newAnimal = {};
         newAnimal.code = $('#' + prefix + '-code').val();
@@ -21,7 +34,7 @@ animals = function () {
         return newAnimal;
     }
 
-    function create () {
+    function create() {
         animalsController.new(getAnimalInfo('new'));
         $(".send-button").button("loading");
     }

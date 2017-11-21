@@ -1,0 +1,10 @@
+<div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12">
+    <% model.images.each do |image| %>
+        <div class="thumbnails-area col-xs-6 col-md-3">
+          <a href="<%= cloudinary_url(image.image_id, :resource_type => :image) %>" data-lightbox="<%= image.animal.id %>"
+             class="thumbnail">
+            <%= cl_image_tag(image.image_id, :crop => :lfill, :width => 240, :height => 200) %>
+          </a>
+        </div>
+    <% end %>
+</div>
