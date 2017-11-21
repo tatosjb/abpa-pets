@@ -5,7 +5,7 @@
           <%= link_to '',
                       destroy_image_path(image),
                       method: :delete,
-                      data: {confirm: 'Are you sure?'},
+                      data: {confirm: 'Tem certeza?'},
                       :class => "glyphicon glyphicon-remove pull-right" %>
         </div>
         <a href="<%= cloudinary_url(image.image_id, :resource_type => :image) %>" data-lightbox="<%= image.animal.id %>"
