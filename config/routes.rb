@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   #Images
   post '/images/save', to: 'images#save_image', as: 'save_image'
+  delete '/images/:id', to: 'images#destroy', as: 'destroy_image'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

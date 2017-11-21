@@ -11,6 +11,7 @@
     "cloudinary-jquery": "^2.3.0",
     "cloudinary-jquery-file-upload": "^2.3.0",
     "jquery": "3.2.1",
+    "jquery-ujs": "^1.2.2",
     "lightbox2": "^2.9.0",
     "modernizr": "3.5.0",
     "select2-bootstrap-theme": "^0.1.0-beta.10"

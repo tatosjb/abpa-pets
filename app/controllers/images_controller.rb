@@ -1,12 +1,7 @@
 class ImagesController < ApplicationController
+  before_action :set_image, only: [:destroy]
+
   def save_image
-    image_id = params[:image_id]
-    animal_id = params[:animal_id]
-
-    puts "############Image: #{image_id}################"
-    puts "############Animal: #{animal_id}################"
-
-
     @image = Image.new(image_params)
 
     if @image.save
@@ -16,7 +11,18 @@ class ImagesController < ApplicationController
     end
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  def destroy
+    Cloudinary::Uploader.destroy(@image.image_id, options = {})
+    @image.destroy
+
+    redirect_to request.referrer
+  end
+
+  private
+  def set_image
+    @image = Image.find(params[:id])
+  end
+
   def image_params
     params.require(:image).permit(:image_id, :animal_id)
   end
