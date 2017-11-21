@@ -1,4 +1,7 @@
 pt-BR:
+  will_paginate:
+    next_label: ">>"
+    previous_label: "<<"
   show: "Exibir"
   edit: "Editar"
   destroy: "Apagar"

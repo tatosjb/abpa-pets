@@ -7,9 +7,13 @@
   </p>
 </div>
 
+<div class="col-xs-12"><%= will_paginate @animals %></div>
+
 <% @animals.each do |animal| %>
     <%= render :template => "animals/animal", :locals => {:animal => animal} %>
 <% end %>
+
+<div class="col-xs-12"><%= will_paginate @animals %></div>
 
 <%= render :template => "animals/new", :locals => {:@animal => Animal.new} %>
 

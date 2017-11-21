@@ -1,11 +1,12 @@
 class Animal < ApplicationRecord
   include TranslateEnum
+  validates :name, presence: true
+  validates :birthdate, presence: true
 
   has_many :adoptions
   has_many :images
 
-  validates :name, presence: true
-  validates :birthdate, presence: true
+  self.per_page = 10
 
   enum pet_type: {dog: 0, cat: 1, wildAnimal: 2, domesticAnimal: 3}
   translate_enum :pet_type
