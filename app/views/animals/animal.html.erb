@@ -7,7 +7,14 @@
       <a href="<%= animal_path(animal) %>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></a>
     </div>
   </div>
-  <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12 animal-block">
+  <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12 animal-block"
+  style="<%= "background-image: url(#{cloudinary_url(animal.images[0].image_id,
+                                                     :resource_type => :image,
+                                                     :width => 400,
+                                                     :height => 200,
+                                                     :crop => :thumb,
+                                                     :gravity => :face,
+                                                     :opacity => 20)})" if animal.images.any? %>">
     <div class="col-xs-6 col-sm-6">
       <p>
         <b>
