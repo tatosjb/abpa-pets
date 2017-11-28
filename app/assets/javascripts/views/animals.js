@@ -30,6 +30,7 @@ animals = function () {
         newAnimal.color = $('#' + prefix + '-color').val();
         newAnimal.fur = $('#' + prefix + '-fur').val();
         newAnimal.description = $('#' + prefix + '-description').val();
+        newAnimal.castred = $('#' + prefix + '-castred').is(":checked");
 
         return newAnimal;
     }
