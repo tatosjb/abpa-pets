@@ -7,12 +7,16 @@ class AnimalsController < ApplicationController
   def index
     @animals = if params[:q]
       if params[:q].to_i > 0
-        Animal.where(id: params[:q]).paginate(:page => params[:page], :per_page => 10)
+        Animal.where(id: params[:q])
+            .order(created_at: :asc)
+            .paginate(:page => params[:page], :per_page => 10)
       else
-        Animal.where("upper(name) like ?", "%#{params[:q].upcase}%").paginate(:page => params[:page], :per_page => 10)
+        Animal.where("upper(name) like ?", "%#{params[:q].upcase}%")
+            .order(created_at: :asc)
+            .paginate(:page => params[:page], :per_page => 10)
       end
     else
-      Animal.paginate(:page => params[:page])
+      Animal.order(created_at: :asc).paginate(:page => params[:page])
     end
   end
 
