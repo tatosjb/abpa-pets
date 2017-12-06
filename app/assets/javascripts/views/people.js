@@ -17,6 +17,7 @@ people = function () {
         newPerson.neighborhood = $('#' + prefix + '-neighborhood').val();
         newPerson.referece_point = $('#' + prefix + '-reference_point').val();
         newPerson.ibge_code = $('#' + prefix + '-ibge_code').val();
+        newPerson.volunteer = $('#' + prefix + '-volunteer').is(":checked");
 
         return newPerson;
     }

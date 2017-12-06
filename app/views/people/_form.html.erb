@@ -24,6 +24,13 @@
       <%= form.text_field :company, id: :person_company, :class => "form-control", :id => "#{locals[:prefix]}-company" %>
     </div>
 
+    <div class="col-xs-12 checkbox-margin">
+      <div class="checkbox-inline">
+        <%= form.check_box(:volunteer, {:id => "#{locals[:prefix]}-volunteer"}) %>
+        <%= form.label :volunteer %>
+      </div>
+    </div>
+
     <div class="col-xs-7">
       <%= form.label :ibge_code, :class => "required" %>
       <select class="form-control required" id="<%= "#{locals[:prefix]}-ibge_code" %>">
