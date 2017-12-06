@@ -9,6 +9,11 @@
       <%= form.text_field :name, id: :name, :id => "#{locals[:prefix]}-name", :class => "form-control  required" %>
     </div>
 
+    <div class="col-xs-12">
+      <%= form.label :placement, :class => "required" %>
+      <%= form.text_field :placement, id: :placement, :id => "#{locals[:prefix]}-placement", :class => "form-control  required" %>
+    </div>
+
     <div class="col-xs-5">
       <%= form.label :size %>
       <%= form.select :size, options_for_select(form.object.class.translated_sizes.map {|translation, k, _v| [translation, k]}, animal.size), {},

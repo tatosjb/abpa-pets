@@ -10,6 +10,7 @@ pt-BR:
         id: "Código"
         code: "Tag"
         name: "Nome"
+        placement: "Localização"
         pet_type: "Tipo"
         pet_type_list:
           dog: "Cachorro"

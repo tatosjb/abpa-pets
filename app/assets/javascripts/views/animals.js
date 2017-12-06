@@ -14,8 +14,6 @@ animals = function () {
             image.animal_id = $("#animal_id").val();
             image.image_id = data.result.public_id;
             animalsController.saveImage(image);
-
-            console.log(data);
         });
     }
 
@@ -31,6 +29,7 @@ animals = function () {
         newAnimal.fur = $('#' + prefix + '-fur').val();
         newAnimal.description = $('#' + prefix + '-description').val();
         newAnimal.castred = $('#' + prefix + '-castred').is(":checked");
+        newAnimal.placement = $('#' + prefix + '-placement').val();
 
         return newAnimal;
     }
