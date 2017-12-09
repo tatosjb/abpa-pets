@@ -77,7 +77,9 @@ class AnimalsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_animal
-    @animal = Animal.find(params[:id])
+    @animal = Animal
+        .order(created_at: :asc)
+        .find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
