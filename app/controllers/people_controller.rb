@@ -4,15 +4,20 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.paginate(:page => params[:page])
+    @people = Person
+        .order(name: :asc)
+        .paginate(:page => params[:page])
   end
 
   # GET /people/find
   def find_person
     people = Person.select(:id, :name)
-                .paginate(page: 1, per_page: 20)
+        .order(name: :asc)
+        .paginate(page: 1, per_page: 20)
 
-    people = people.where('upper(name) like ?', "%#{params["query"].upcase}%") if !params["query"].nil?
+    people = people
+        .order(name: :asc)
+        .where('upper(name) like ?', "%#{params["query"].upcase}%") if !params["query"].nil?
 
     render json: people
   end
@@ -20,6 +25,7 @@ class PeopleController < ApplicationController
   def find_volunteer
     people = Person.select(:id, :name)
         .where(volunteer: :true)
+        .order(name: :asc)
         .paginate(page: 1, per_page: 20)
 
     people = people
@@ -85,7 +91,9 @@ class PeopleController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_person
-    @person = Person.find(params[:id])
+    @person = Person
+        .order(name: :asc)
+        .find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
