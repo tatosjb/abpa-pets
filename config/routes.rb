@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   root to: 'animals#index'
 
   #People
-  get '/people/find/:query', to: 'people#find'
-  get '/people/find', to: 'people#find'
+  get '/people/find/:query', to: 'people#find_person'
+  get '/people/find', to: 'people#find_person'
+  get '/volunteer/find', to: 'people#find_volunteer'
   resources :people
 
   #Animals

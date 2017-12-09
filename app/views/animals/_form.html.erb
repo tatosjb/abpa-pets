@@ -57,6 +57,17 @@
     </div>
 
     <div class="col-xs-12">
+      <label for="find-people-<%= :id %>" class="required">
+        Voluntário responsável:
+      </label>
+      <select id="<%= locals[:prefix] %>-person" style="width: 100%" class="find-volunteer form-control">
+        <% if !animal.person.nil? %>
+            <option value="<%= :id %>"><%= animal.person.name %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="col-xs-12">
       <%= form.label :description %>
       <%= form.text_area :description, id: :animal_description, :class => "form-control", :id => "#{locals[:prefix]}-description" %>
     </div>

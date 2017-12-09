@@ -2,6 +2,8 @@ people = function () {
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
     var peopleController = new PeopleController(csrfToken);
 
+    $.fn.modal.Constructor.prototype.enforceFocus = function() {};
+
     $(".required").keypress(function () {
         $(this).removeClass("field-validation-error");
     });

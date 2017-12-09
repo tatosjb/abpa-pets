@@ -33,6 +33,7 @@ class AnimalsController {
                 window.location.href = location.protocol + "//" + location.host;
             })
             .catch(function (error) {
+                console.log(error.response);
                 AnimalsController.printErrors(error.response, "new");
                 $(".send-button").button("reset");
             });

@@ -1,30 +1,51 @@
 adoption = function () {
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
     var adoptionController = new AdoptionController(csrfToken);
+    
+    function processResults(data) {
+        let result = {
+            results: data.map(function (value) {
+                return {
+                    id: value.id,
+                    text: value.name
+                }
+            }),
+        };
+
+        return result;
+    }
+
+    function findPeople(params) {
+        if (params.term)
+            return "/people/find/" + params.term;
+
+        return "/people/find/";
+    }
+
+    function findVolunteer(params) {
+        if (params.term)
+            return "/volunteer/find/" + params.term;
+
+        return "/volunteer/find/";
+    }
 
     $('.find-people').select2({
         placeholder: 'Selecione uma pessoa',
         ajax: {
-            url: function (params) {
-                if (params.term)
-                    return "/people/find/" + params.term;
-
-                return "/people/find/";
-            },
+            url: findPeople,
             dataType: 'json',
             data: "",
-            processResults: function (data) {
-                let result = {
-                    results: data.map(function (value) {
-                        return {
-                            id: value.id,
-                            text: value.name
-                        }
-                    }),
-                };
+            processResults: processResults
+        }
+    });
 
-                return result;
-            }
+    $('.find-volunteer').select2({
+        placeholder: 'Selecione uma pessoa',
+        ajax: {
+            url: findVolunteer,
+            dataType: 'json',
+            data: "",
+            processResults: processResults
         }
     });
 

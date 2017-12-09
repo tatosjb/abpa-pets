@@ -8,11 +8,22 @@ class PeopleController < ApplicationController
   end
 
   # GET /people/find
-  def find
+  def find_person
     people = Person.select(:id, :name)
                 .paginate(page: 1, per_page: 20)
 
     people = people.where('upper(name) like ?', "%#{params["query"].upcase}%") if !params["query"].nil?
+
+    render json: people
+  end
+
+  def find_volunteer
+    people = Person.select(:id, :name)
+        .where(volunteer: :true)
+        .paginate(page: 1, per_page: 20)
+
+    people = people
+        .where('upper(name) like ?', "%#{params["query"].upcase}%") if !params["query"].nil?
 
     render json: people
   end

@@ -6,6 +6,7 @@ class Animal < ApplicationRecord
 
   has_many :adoptions
   has_many :images
+  belongs_to :person
 
   self.per_page = 10
 

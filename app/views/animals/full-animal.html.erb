@@ -88,6 +88,7 @@
       <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12 animal-info-block">
         <ul class="list-unstyled">
           <li>Localização: <%= animal.placement %></li>
+          <li>Responsável: <%= animal.person.name %></li>
           <% if animal.castred %>
               <li><%= "Castrado" %></li>
           <% end %>
