@@ -14,7 +14,7 @@
           <div class="modal-footer">
             <div class="container col-xs-12 btn-top-margin">
               <a onclick="animals.edit(<%= @animal.id %>)" class="btn btn-primary send-button">Salvar</a>
-              <%= link_to 'Cancelar', animals_path, :class => "btn btn-default" %>
+              <a class="btn btn-default" onclick="window.location.reload()">Cancelar</a>
             </div>
           </div>
         </div>

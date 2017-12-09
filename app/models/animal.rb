@@ -25,4 +25,7 @@ class Animal < ApplicationRecord
   enum gender: [:male, :female]
   translate_enum :gender
 
+  def age
+    (DateTime.current - birthdate).to_i / 365
+  end
 end

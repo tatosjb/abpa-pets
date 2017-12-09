@@ -64,9 +64,9 @@
       </p>
       <p>
         <b>
-          <div><%= I18n.t 'activerecord.attributes.animal.birthdate' %></div>
+          <div>Idade aproximada</div>
         </b>
-        <span><%= animal.birthdate %></span>
+        <span><%= animal.age.to_s + " ano".pluralize(animal.age) %></span>
       </p>
     </div>
 
