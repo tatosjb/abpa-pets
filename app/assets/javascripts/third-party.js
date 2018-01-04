@@ -5,7 +5,7 @@
 //= require axios
 //= require select2
 //= require cloudinary
-//= require lightbox2
+//= require lightbox
 
 axios = require('axios');
 csrfToken = $('meta[name="csrf-token"]').attr('content');
