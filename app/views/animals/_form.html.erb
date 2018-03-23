@@ -1,75 +1,79 @@
 <%= form_with(model: animal, local: true) do |form| %>
-    <div class="col-xs-6">
-      <%= form.label :code %>
-      <%= form.text_field :code, id: :code, :id => "#{locals[:prefix]}-code", :class => "form-control" %>
-    </div>
+  <div class="col-xs-6">
+    <%= form.label :code %>
+    <%= form.text_field :code, id: :code, :id => "#{locals[:prefix]}-code", :class => "form-control" %>
+  </div>
 
-    <div class="col-xs-12">
-      <%= form.label :name, :class => "required" %>
-      <%= form.text_field :name, id: :name, :id => "#{locals[:prefix]}-name", :class => "form-control  required" %>
-    </div>
+  <div class="col-xs-12">
+    <%= form.label :name, :class => "required" %>
+    <%= form.text_field :name, id: :name, :id => "#{locals[:prefix]}-name", :class => "form-control  required" %>
+  </div>
 
-    <div class="col-xs-12">
-      <%= form.label :placement, :class => "required" %>
-      <%= form.text_field :placement, id: :placement, :id => "#{locals[:prefix]}-placement", :class => "form-control  required" %>
-    </div>
+  <div class="col-xs-12">
+    <%= form.label :placement, :class => "required" %>
+    <%= form.text_field :placement, id: :placement, :id => "#{locals[:prefix]}-placement", :class => "form-control  required" %>
+  </div>
 
-    <div class="col-xs-5">
-      <%= form.label :size %>
-      <%= form.select :size, options_for_select(form.object.class.translated_sizes.map {|translation, k, _v| [translation, k]}, animal.size), {},
-                      {:class => "form-control", :id => "#{locals[:prefix]}-size"} %>
-    </div>
+  <div class="col-xs-5">
+    <%= form.label :size %>
+    <%= form.select :size, options_for_select(form.object.class.translated_sizes.map {|translation, k, _v| [translation, k]}, animal.size), {},
+                    {:class => "form-control", :id => "#{locals[:prefix]}-size"} %>
+  </div>
 
-    <div class="col-xs-7">
-      <%= form.label :pet_type %>
-      <%= form.select :pet_type, options_for_select(form.object.class.translated_pet_types.map {|translation, k, _v| [translation, k]}, animal.pet_type),
-                      {}, {:class => "form-control", :id => "#{locals[:prefix]}-pet_type"} %>
-    </div>
+  <div class="col-xs-7">
+    <%= form.label :pet_type %>
+    <%= form.select :pet_type, options_for_select(form.object.class.translated_pet_types.map {|translation, k, _v| [translation, k]}, animal.pet_type),
+                    {}, {:class => "form-control", :id => "#{locals[:prefix]}-pet_type"} %>
+  </div>
 
-    <div class="col-xs-5">
-      <%= form.label :gender %>
-      <%= form.select :gender, options_for_select(form.object.class.translated_genders.map {|translation, k, _v| [translation, k]}, animal.gender), {},
-                      {:class => "form-control", :id => "#{locals[:prefix]}-gender"} %>
-    </div>
+  <div class="col-xs-5">
+    <%= form.label :gender %>
+    <%= form.select :gender, options_for_select(form.object.class.translated_genders.map {|translation, k, _v| [translation, k]}, animal.gender), {},
+                    {:class => "form-control", :id => "#{locals[:prefix]}-gender"} %>
+  </div>
 
-    <div class="col-xs-7">
-      <%= form.label :birthdate, :class => "required" %>
-      <%= form.text_field :birthdate, id: :animal_birthdate, :type => "date", :class => "form-control required", :id => "#{locals[:prefix]}-birthdate" %>
-    </div>
+  <div class="col-xs-7">
+    <%= form.label :birthdate, :class => "required" %>
+    <%= form.text_field :birthdate, id: :animal_birthdate, :type => "date", :class => "form-control required", :id => "#{locals[:prefix]}-birthdate" %>
+  </div>
 
-    <div class="col-xs-8">
-      <%= form.label :color %>
-      <%= form.select :color, options_for_select(form.object.class.translated_colors.map {|translation, k, _v| [translation, k]}, animal.color), {},
-                      {:class => "form-control", :id => "#{locals[:prefix]}-color"} %>
-    </div>
+  <div class="col-xs-8">
+    <%= form.label :color %>
+    <%= form.select :color, options_for_select(form.object.class.translated_colors.map {|translation, k, _v| [translation, k]}, animal.color), {},
+                    {:class => "form-control", :id => "#{locals[:prefix]}-color"} %>
+  </div>
 
-    <div class="col-xs-8">
-      <%= form.label :fur %>
-      <%= form.select :fur, options_for_select(form.object.class.translated_furs.map {|translation, k, _v| [translation, k]}, animal.fur), {},
-                      {:class => "form-control", :id => "#{locals[:prefix]}-fur"} %>
-    </div>
+  <div class="col-xs-8">
+    <%= form.label :fur %>
+    <%= form.select :fur, options_for_select(form.object.class.translated_furs.map {|translation, k, _v| [translation, k]}, animal.fur), {},
+                    {:class => "form-control", :id => "#{locals[:prefix]}-fur"} %>
+  </div>
 
-    <div class="col-xs-12 checkbox-margin">
-      <div class="checkbox-inline">
-        <%= form.check_box(:castred, {:id => "#{locals[:prefix]}-castred"}) %>
-        <%= form.label :castred %>
-      </div>
+  <div class="col-xs-12 checkbox-margin">
+    <div class="checkbox-inline">
+      <%= form.check_box(:castred, {:id => "#{locals[:prefix]}-castred"}) %>
+      <%= form.label :castred %>
     </div>
+    <div>
+      <%= form.check_box(:approximated_born, {:id => "#{locals[:prefix]}-approximated-born"}) %>
+      <%= form.label :approximated_born %>
+    </div>
+  </div>
 
-    <div class="col-xs-12">
-      <label for="find-people-<%= :id %>" class="required">
-        Voluntário responsável:
-      </label>
-      <select id="<%= locals[:prefix] %>-person" style="width: 100%" class="find-volunteer form-control">
-        <% if !animal.person.nil? %>
-            <option value="<%= :id %>"><%= animal.person.name %></option>
-        <% end %>
-      </select>
-    </div>
+  <div class="col-xs-12">
+    <label for="find-people-<%= :id %>" class="required">
+      Voluntário responsável:
+    </label>
+    <select id="<%= locals[:prefix] %>-person" style="width: 100%" class="find-volunteer form-control">
+      <% if !animal.person.nil? %>
+        <option value="<%= :id %>"><%= animal.person.name %></option>
+      <% end %>
+    </select>
+  </div>
 
-    <div class="col-xs-12">
-      <%= form.label :description %>
-      <%= form.text_area :description, id: :animal_description, :class => "form-control", :id => "#{locals[:prefix]}-description" %>
-    </div>
+  <div class="col-xs-12">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :animal_description, :class => "form-control", :id => "#{locals[:prefix]}-description" %>
+  </div>
 <% end %>
 

@@ -43,5 +43,6 @@ pt-BR:
           male: "Macho"
           female: "Fêmea"
         birthdate: "Nascimento"
+        approximated_born: "Nascimento aproximado"
         description: "Descrição"
         castred: "Castrado"

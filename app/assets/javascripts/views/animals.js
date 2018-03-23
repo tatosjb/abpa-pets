@@ -29,6 +29,7 @@ animals = function () {
         newAnimal.fur = $('#' + prefix + '-fur').val();
         newAnimal.description = $('#' + prefix + '-description').val();
         newAnimal.castred = $('#' + prefix + '-castred').is(":checked");
+        newAnimal.approximated_born = $('#' + prefix + '-approximated-born').is(":checked");
         newAnimal.placement = $('#' + prefix + '-placement').val();
         newAnimal.person_id = $('#' + prefix + '-person').val();
 

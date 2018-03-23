@@ -64,7 +64,7 @@
       </p>
       <p>
         <b>
-          <div>Idade aproximada</div>
+          <div>Idade <%= " aproximada" if animal.approximated_born %></div>
         </b>
         <span><%= animal.age.to_s + " ano".pluralize(animal.age) %></span>
       </p>
