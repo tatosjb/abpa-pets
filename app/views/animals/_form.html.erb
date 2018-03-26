@@ -66,7 +66,7 @@
     </label>
     <select id="<%= locals[:prefix] %>-person" style="width: 100%" class="find-volunteer form-control">
       <% if !animal.person.nil? %>
-        <option value="<%= :id %>"><%= animal.person.name %></option>
+        <option value="<%= animal.person.id %>"><%= animal.person.name %></option>
       <% end %>
     </select>
   </div>
