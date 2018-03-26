@@ -14,17 +14,27 @@
       <%= form.text_field :cpf, id: :person_cpf, :class => "form-control required", :id => "#{locals[:prefix]}-cpf"  %>
     </div>
 
-    <div class="col-xs-6">
-      <%= form.label :occupation %>
-      <%= form.text_field :occupation, id: :person_occupation, :class => "form-control", :id => "#{locals[:prefix]}-occupation" %>
-    </div>
+  <div class="col-xs-6">
+    <%= form.label :occupation %>
+    <%= form.text_field :occupation, id: :person_occupation, :class => "form-control", :id => "#{locals[:prefix]}-occupation" %>
+  </div>
 
-    <div class="col-xs-6">
-      <%= form.label :company %>
-      <%= form.text_field :company, id: :person_company, :class => "form-control", :id => "#{locals[:prefix]}-company" %>
-    </div>
+  <div class="col-xs-6">
+    <%= form.label :company %>
+    <%= form.text_field :company, id: :person_company, :class => "form-control", :id => "#{locals[:prefix]}-company" %>
+  </div>
 
-    <div class="col-xs-12 checkbox-margin">
+  <div class="col-xs-6">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :email, :class => "form-control", :id => "#{locals[:prefix]}-email" %>
+  </div>
+
+  <div class="col-xs-6">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :phone, :class => "form-control", :id => "#{locals[:prefix]}-phone" %>
+  </div>
+
+  <div class="col-xs-12 checkbox-margin">
       <div class="checkbox-inline">
         <%= form.check_box(:volunteer, {:id => "#{locals[:prefix]}-volunteer"}) %>
         <%= form.label :volunteer %>

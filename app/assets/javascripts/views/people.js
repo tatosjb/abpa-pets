@@ -20,6 +20,8 @@ people = function () {
         newPerson.referece_point = $('#' + prefix + '-reference_point').val();
         newPerson.ibge_code = $('#' + prefix + '-ibge_code').val();
         newPerson.volunteer = $('#' + prefix + '-volunteer').is(":checked");
+        newPerson.email = $('#' + prefix + '-email').val();
+        newPerson.phone = $('#' + prefix + '-phone').val();
 
         return newPerson;
     }
